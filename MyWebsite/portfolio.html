@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindLink | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body { font-family:'Fredoka', sans-serif; background:#d4e6c4; margin:0; color:#3c4a3c; line-height:1.6; }
+a { color:#6b8e23; text-decoration:none; } 
+a:hover { text-decoration:underline; }
+
+/* --- Navigation --- */
+nav { display:flex; flex-direction:column; align-items:center; padding:12px 20px; background:#a3c1a1; border-bottom:2px solid #8aa68b; font-weight:600; }
+nav .logo-wrap { display:flex; align-items:center; margin-bottom:10px; }
+nav .logo-wrap img { height:50px; margin-right:10px; transform:rotate(-3deg); }
+nav .brand { font-size:1.8em; color:#3c4a3c; }
+
+/* --- Nav Buttons --- */
+.nav-buttons { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+.nav-buttons button, .dropbtn {
+  background: #8aa68b;
+  color:#3c4a3c;
+  border:2px solid #3c4a3c;
+  padding:10px 20px;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.nav-buttons button:hover, .dropbtn:hover {
+  background:#a3c1a1;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* --- Dropdown --- */
+.dropdown { position:relative; display:inline-block; }
+.dropdown-content {
+  display:none;
+  position:absolute;
+  background:#8aa68b;
+  min-width:160px;
+  border-radius:10px;
+  overflow:hidden;
+  top:110%;
+  z-index:100;
+}
+.dropdown-content a {
+  display:block;
+  padding:10px;
+  color:#3c4a3c;
+  text-decoration:none;
+  font-weight:600;
+  border-bottom:1px solid #8aa68b;
+}
+.dropdown-content a:last-child { border-bottom:none; }
+.dropdown-content.show { display:block; }
+
+/* --- Page Content --- */
+.container { max-width:1200px; margin:30px auto; padding:0 20px; text-align:center; }
+h1 { font-size:2.5em; color:#6b8e23; margin-bottom:15px; }
+p { font-size:1em; margin-bottom:25px; }
+
+/* Carousel */
+.carousel-container { position:relative; overflow:hidden; margin:30px 0; }
+.carousel-track { display:flex; transition: transform 0.4s ease; }
+.card { min-width:280px; height:180px; margin-right:20px; background:#e4f5d8; border-radius:15px; box-shadow:2px 2px 5px rgba(0,0,0,0.05); display:flex; justify-content:center; align-items:center; font-size:1.4em; font-weight:600; cursor:default; flex-shrink:0; transition: transform 0.2s, background 0.2s; }
+.card:hover { transform:translateY(-5px); background:#dff3c6; }
+
+/* Arrows */
+.arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:2.5em; color:#556b2f; background:#e6f2d9; border-radius:50%; padding:5px 12px; cursor:pointer; user-select:none; z-index:10; }
+.arrow:hover { background:#dff3c6; }
+.arrow-left { left:-10px; }
+.arrow-right { right:-10px; }
+
+footer { text-align:center; background:#a3c1a1; color:#3c4a3c; padding:20px; border-top:2px solid #8aa68b; margin-top:40px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo-wrap">
+    <img src="logo.png" alt="MindLink Logo">
+    <div class="brand">MindLink</div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <div class="dropdown">
+      <button class="dropbtn">Our Team ▼</button>
+      <div class="dropdown-content">
+        <a href="club-creators.html">Club Creators</a>
+        <a href="club-moderators.html">Club Moderators</a>
+      </div>
+    </div>
+    <button onclick="location.href='portfolio.html'">Portfolio</button>
+    <button onclick="location.href='commissions.html'">Commissions</button>
+    <button onclick="location.href='involved.html'">Get Involved</button>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Our Rooms & Creations 🎨</h1>
+  <p>MindLink builds fun, cozy, and mental-health-friendly spaces in Rec Room! Click the arrows to explore. We focus on creativity, relaxation, and making every space welcoming.</p>
+
+  <!-- Carousel Row 1 -->
+  <div class="carousel-container">
+    <div class="arrow arrow-left" onclick="slideLeft(0)">◀</div>
+    <div class="carousel-track" id="carousel0">
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+    </div>
+    <div class="arrow arrow-right" onclick="slideRight(0)">▶</div>
+  </div>
+
+  <!-- Carousel Row 2 -->
+  <div class="carousel-container">
+    <div class="arrow arrow-left" onclick="slideLeft(1)">◀</div>
+    <div class="carousel-track" id="carousel1">
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+      <div class="card">Coming Soon</div>
+    </div>
+    <div class="arrow arrow-right" onclick="slideRight(1)">▶</div>
+  </div>
+</div>
+
+<footer>
+© 2026 MindLink — All Rights Reserved
+</footer>
+
+<script>
+const carouselPositions = [0, 0];
+const cardWidth = 300;
+function slideLeft(row) {
+  carouselPositions[row] = Math.min(carouselPositions[row] + cardWidth, 0);
+  document.getElementById('carousel' + row).style.transform = 'translateX(' + carouselPositions[row] + 'px)';
+}
+function slideRight(row) {
+  const track = document.getElementById('carousel' + row);
+  const maxSlide = -(cardWidth * 2);
+  carouselPositions[row] = Math.max(carouselPositions[row] - cardWidth, maxSlide);
+  track.style.transform = 'translateX(' + carouselPositions[row] + 'px)';
+}
+
+// --- Dropdown JS ---
+const dropbtn = document.querySelector('.dropbtn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+dropbtn.addEventListener('click', function(event){
+  event.stopPropagation();
+  dropdownContent.classList.toggle('show');
+});
+
+window.addEventListener('click', function(){
+  dropdownContent.classList.remove('show');
+});
+</script>
+
+</body>
+</html>
